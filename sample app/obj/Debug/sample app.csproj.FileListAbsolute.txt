@@ -1,0 +1,13 @@
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\sample app.exe.config
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\sample app.exe
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\sample app.pdb
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.csprojResolveAssemblyReference.cache
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample_app.Form1.resources
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample_app.Properties.Resources.resources
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.csproj.GenerateResource.Cache
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.exe
+c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.pdb
+C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample_app.Homepage.resources
+C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\MySql.Data.Entity.EF6.xml
+C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml

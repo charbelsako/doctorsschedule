@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MySql.Data;
+
+namespace sample_app
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            // get data from username and password fields and compare to those in the database.
+            string user = this.username.Text;
+            string pass = this.password.Text;
+            // connect to the database
+            string conn = "server=localhost;database=doctorsschedule;uid=root;";
+            MySqlConnection cnn = new MySqlConnection(conn);
+
+            string query = "SELECT first_name, last_name FROM users WHERE username='" + user + "' AND password='" + pass+ "' LIMIT 1";
+     
+            MySqlCommand commandDatabase = new MySqlCommand(query, cnn);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+                
+                if(reader.HasRows){
+                    Homepage main = new Homepage();
+                    // you have to run the method read before accessing results
+                    while (reader.Read())
+                    {
+                        MessageBox.Show(reader.GetString(0) + " " + reader.GetString(1));
+                        // Capitalizing the first character of the first name and last name
+                        string fname = char.ToUpper(reader.GetString(0)[0]) + reader.GetString(0).Substring(1).ToLower();
+                        string lname = char.ToUpper(reader.GetString(1)[0]) + reader.GetString(1).Substring(1).ToLower();
+                        main.user = fname + " " + lname;
+                    }
+                    
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    this.status.Text = "Invalid Credentials";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+
+
+
+
+
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+            // validate if password has required length and contains 
+            // at least 1 number and 1 uppercase letter and doesn't contain harmful characters.
+        }
+    }
+}
