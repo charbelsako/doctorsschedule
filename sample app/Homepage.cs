@@ -28,7 +28,7 @@ namespace sample_app
             // since we don't have a password we don't add the pwd.
             string conn = "server=localhost;database=doctorsschedule;uid=root;";
             MySqlConnection cnn = new MySqlConnection(conn);
-            string sql = "SELECT * FROM users";
+            string sql = "SELECT first_name, last_name FROM users";
             DataSet Ds = new DataSet();
           
             try
@@ -42,10 +42,12 @@ namespace sample_app
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Connection Couldn't be opened");
+                MessageBox.Show("Connection Couldn't be opened. Oh well");
             }
             // get the data for the user
         }
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -62,6 +64,11 @@ namespace sample_app
         private void courses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Homepage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

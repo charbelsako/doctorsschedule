@@ -54,10 +54,9 @@ namespace sample_app
                     // you have to run the method read before accessing results
                     while (reader.Read())
                     {
-                        MessageBox.Show(reader.GetString(0) + " " + reader.GetString(1));
                         // Capitalizing the first character of the first name and last name
-                        string fname = char.ToUpper(reader.GetString(0)[0]) + reader.GetString(0).Substring(1).ToLower();
-                        string lname = char.ToUpper(reader.GetString(1)[0]) + reader.GetString(1).Substring(1).ToLower();
+                        string fname = capitalizeFirst(reader.GetString(0));
+                        string lname = capitalizeFirst(reader.GetString(1));
                         main.user = fname + " " + lname;
                     }
                     
@@ -80,6 +79,11 @@ namespace sample_app
 
 
 
+        }
+
+        private string capitalizeFirst(string text)
+        {
+            return (char.ToUpper(text[0]) + text.Substring(1).ToLower());
         }
 
         private void password_TextChanged(object sender, EventArgs e)
