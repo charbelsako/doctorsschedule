@@ -14,6 +14,7 @@ namespace sample_app
 {
     public partial class Homepage : Form
     {
+        
         public string user = null;
         private MySqlDataAdapter adapter;
        
@@ -28,6 +29,9 @@ namespace sample_app
             // since we don't have a password we don't add the pwd.
             string conn = "server=localhost;database=doctorsschedule;uid=root;";
             MySqlConnection cnn = new MySqlConnection(conn);
+            // Database db = new Database();
+            // MySqlConnection conn = db.connect();
+            // DataTable data = db.getData("SELECT * FROM users");
             string sql = "SELECT first_name, last_name FROM users";
             DataSet Ds = new DataSet();
           
@@ -37,6 +41,7 @@ namespace sample_app
                 adapter = new MySqlDataAdapter(sql, cnn);
                 adapter.Fill(Ds, "courses");
                 DataTable data = Ds.Tables["courses"];
+                // Fills the data grid view with the data
                 courses.DataSource = data;
                 // Connection established
             }
@@ -68,6 +73,10 @@ namespace sample_app
 
         private void Homepage_FormClosed(object sender, FormClosedEventArgs e)
         {
+            // Problem: When the main windows is hidden and you close the second window
+            //the application does not close.
+
+            // Closes the application when another window is closed.
             Application.Exit();
         }
     }
