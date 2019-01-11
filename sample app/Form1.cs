@@ -46,7 +46,7 @@ namespace sample_app
             string conn = "server=localhost;database=doctorsschedule;uid=root;";
             MySqlConnection cnn = new MySqlConnection(conn);
 
-            string query = "SELECT first_name, last_name FROM users WHERE username='" + user + "' AND password='" + pass+ "' LIMIT 1";
+            string query = "SELECT first_name, last_name, type FROM users WHERE username='" + user + "' AND password='" + pass+ "' LIMIT 1";
      
             MySqlCommand commandDatabase = new MySqlCommand(query, cnn);
             commandDatabase.CommandTimeout = 60;
@@ -58,16 +58,23 @@ namespace sample_app
                 
                 if(reader.HasRows){
                     Teacher_Homepage main = new Teacher_Homepage();
+                    Student_Homepage student_main;
+                    Admin_Homepage admin_main;
+                    string user_type;
                     // you have to run the method read before accessing results
                     while (reader.Read())
                     {
                         // Capitalizing the first character of the first name and last name
                         string fname = capitalizeFirst(reader.GetString(0));
                         string lname = capitalizeFirst(reader.GetString(1));
+                        user_type = reader.GetString(2);
+                        // can i add a global class to save these
                         main.user = fname + " " + lname;
                     }
                     
                     this.Hide();
+                    // show all the different forms based on the user type
+
                     main.Show();
                 }
                 else
