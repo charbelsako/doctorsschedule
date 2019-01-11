@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace sample_app
 {
-    public partial class Register : Form
+    public partial class Admin_Homepage : Form
     {
-        public Register()
+        public Admin_Homepage()
         {
             InitializeComponent();
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

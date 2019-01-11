@@ -1,6 +1,6 @@
 ﻿namespace sample_app
 {
-    partial class Homepage
+    partial class Teacher_Homepage
     {
         /// <summary>
         /// Required designer variable.

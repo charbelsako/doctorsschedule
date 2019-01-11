@@ -57,7 +57,7 @@ namespace sample_app
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
                 
                 if(reader.HasRows){
-                    Homepage main = new Homepage();
+                    Teacher_Homepage main = new Teacher_Homepage();
                     // you have to run the method read before accessing results
                     while (reader.Read())
                     {

@@ -12,13 +12,13 @@ using MySql.Data.MySqlClient;
 
 namespace sample_app
 {
-    public partial class Homepage : Form
+    public partial class Teacher_Homepage : Form
     {
         
         public string user = null;
         private MySqlDataAdapter adapter;
        
-        public Homepage()
+        public Teacher_Homepage()
         {
             InitializeComponent();
         }
