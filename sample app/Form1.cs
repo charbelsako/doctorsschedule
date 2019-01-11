@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using System.Text.RegularExpressions;
 
 namespace sample_app
 {
     public partial class Form1 : Form
     {
+        private bool invalid_pass = true;
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace sample_app
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -32,6 +34,11 @@ namespace sample_app
 
         private void login_btn_Click(object sender, EventArgs e)
         {
+            if (invalid_pass)
+            {
+                status.Text = "Pass contains invalid characters";
+                return;
+            }
             // get data from username and password fields and compare to those in the database.
             string user = this.username.Text;
             string pass = this.password.Text;
@@ -72,13 +79,6 @@ namespace sample_app
             {
                 MessageBox.Show(ex.Message);
             }
-
-            
-
-
-
-
-
         }
 
         private string capitalizeFirst(string text)
@@ -88,6 +88,22 @@ namespace sample_app
 
         private void password_TextChanged(object sender, EventArgs e)
         {
+            
+            // removes numbers and special characters
+            // Regex rx = new Regex("[^a-z0-9]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            string input = password.Text;
+            string pattern = @"[*`=()&% ]";
+            MatchCollection matches = Regex.Matches(input, pattern);
+            if (matches.Count > 0)
+            {
+                status.Text = "Password cannot contain *`=()&%";
+                invalid_pass = true;
+            }
+            else
+            {
+                status.Text = "";
+                invalid_pass = false;
+            }
             // validate if password has required length and contains 
             // at least 1 number and 1 uppercase letter and doesn't contain harmful characters.
         }
