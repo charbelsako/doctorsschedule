@@ -9,9 +9,9 @@ namespace sample_app
     class userdata
     {
         // This class is intended to let all windows get access to the user's data.
-        public string username;
-        public string password;
-        public string user_type;
+        public static string username;
+        public static string password;
+        public static string user_type;
 
     }
 }

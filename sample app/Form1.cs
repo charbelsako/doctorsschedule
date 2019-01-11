@@ -24,7 +24,7 @@ namespace sample_app
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -46,8 +46,8 @@ namespace sample_app
             string conn = "server=localhost;database=doctorsschedule;uid=root;";
             MySqlConnection cnn = new MySqlConnection(conn);
 
-            string query = "SELECT first_name, last_name, type FROM users WHERE username='" + user + "' AND password='" + pass+ "' LIMIT 1";
-     
+            string query = "SELECT first_name, last_name, type FROM users WHERE username='" + user + "' AND password='" + pass + "' LIMIT 1";
+
             MySqlCommand commandDatabase = new MySqlCommand(query, cnn);
             commandDatabase.CommandTimeout = 60;
 
@@ -55,27 +55,52 @@ namespace sample_app
             {
                 cnn.Open();
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
-                
-                if(reader.HasRows){
+
+                if (reader.HasRows)
+                {
                     Teacher_Homepage main = new Teacher_Homepage();
                     Student_Homepage student_main;
                     Admin_Homepage admin_main;
-                    string user_type;
+                   
+
+                    char user_type = 'a';
+                    string fname;
+                    string lname;
                     // you have to run the method read before accessing results
                     while (reader.Read())
                     {
                         // Capitalizing the first character of the first name and last name
-                        string fname = capitalizeFirst(reader.GetString(0));
-                        string lname = capitalizeFirst(reader.GetString(1));
-                        user_type = reader.GetString(2);
-                        // can i add a global class to save these
-                        main.user = fname + " " + lname;
+                        fname = capitalizeFirst(reader.GetString(0));
+                        lname = capitalizeFirst(reader.GetString(1));
+                        user_type = reader.GetChar(2);
+                        // can i add a global class to save these. userdata.cs
+                        userdata.username = fname + " " + lname;
                     }
-                    
-                    this.Hide();
-                    // show all the different forms based on the user type
 
-                    main.Show();
+                    this.Hide();
+
+                    switch (user_type)
+                    {
+                        case 'a':
+                            student_main = new Student_Homepage();
+                            student_main.Show();
+                            break;
+                        case 'b':
+                            main = new Teacher_Homepage();
+                            main.Show();
+                            break;
+                        // this should be changed later.
+                        case 'c':
+                            admin_main = new Admin_Homepage();
+                            admin_main.Show();
+                            break;
+                        case 'd':
+                            admin_main = new Admin_Homepage();
+                            admin_main.Show();
+                            break;
+                    }
+                    // show all the different forms based on the user type
+                    
                 }
                 else
                 {
@@ -95,7 +120,7 @@ namespace sample_app
 
         private void password_TextChanged(object sender, EventArgs e)
         {
-            
+
             // removes numbers and special characters
             // Regex rx = new Regex("[^a-z0-9]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
             string input = password.Text;

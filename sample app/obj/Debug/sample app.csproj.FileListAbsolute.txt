@@ -7,7 +7,8 @@ c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\
 c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.csproj.GenerateResource.Cache
 c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.exe
 c:\users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample app.pdb
-C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample_app.Homepage.resources
 C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\MySql.Data.Entity.EF6.xml
 C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
 C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample_app.Teacher_Homepage.resources
+C:\Users\sarkis\documents\visual studio 2013\Projects\sample app\sample app\obj\Debug\sample_app.Register.resources

@@ -16,5 +16,15 @@ namespace sample_app
         {
             InitializeComponent();
         }
+
+        private void Student_Homepage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Student_Homepage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

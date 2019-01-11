@@ -16,5 +16,10 @@ namespace sample_app
         {
             InitializeComponent();
         }
+
+        private void Admin_Homepage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

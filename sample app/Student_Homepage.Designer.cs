@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Student_Homepage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Student_Homepage";
             this.Text = "Student_Homepage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Student_Homepage_FormClosed);
+            this.Load += new System.EventHandler(this.Student_Homepage_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

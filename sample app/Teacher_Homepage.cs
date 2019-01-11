@@ -14,8 +14,7 @@ namespace sample_app
 {
     public partial class Teacher_Homepage : Form
     {
-        
-        public string user = null;
+       
         private MySqlDataAdapter adapter;
        
         public Teacher_Homepage()
@@ -25,7 +24,7 @@ namespace sample_app
 
         private void Homepage_Load(object sender, EventArgs e)
         {
-            label1.Text = "Welcome, "+user;
+            label1.Text = "Welcome, "+userdata.username;
             // since we don't have a password we don't add the pwd.
             string conn = "server=localhost;database=doctorsschedule;uid=root;";
             MySqlConnection cnn = new MySqlConnection(conn);
