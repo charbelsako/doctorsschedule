@@ -1,0 +1,2 @@
+GETS THE ROOM CODE OF A GIVEN COURSE:
+	SELECT code, title, number FROM `courses` JOIN rooms ON courses.room_id = rooms.id
