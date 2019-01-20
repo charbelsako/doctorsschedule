@@ -15,11 +15,32 @@ namespace sample_app
         public Admin_Homepage()
         {
             InitializeComponent();
+            label1.Text = "Welcome, "+ userdata.username;
         }
 
         private void Admin_Homepage_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            Register reg = new Register();
+            reg.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            Form1 logout = new Form1();
+            logout.Show();
         }
     }
 }

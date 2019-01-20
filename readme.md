@@ -6,13 +6,16 @@ Connecting to the database
 The problem turned out to be the version of the .NET framework. Had to download a newer version.
 
 Couldn't figure out how to display the result of the query to the user.
-Made a **MySqlDataAdapter** and filled a **DataSet** with the data.
-`MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);`
+Made a **MySqlDataAdapter**
 
-`adapter.Fill(ds, "data");`
-Then I return the data from the dataset. `return ds.Tables["data"]` and store that in a **DataTable** object
+`MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);`  
+Fill the dataset with the data  
+`adapter.Fill(ds, "data");`  
+Then I return the data from the dataset.  
+`return ds.Tables["data"]`  
+and store that in a **DataTable** object  
 `DataTable table`
-and now you can modify the **DataSource** of a **DataGridView** and display the data.
+and now you can modify the **DataSource** of a **DataGridView** and display the data.  
 `dataGridView1.DataSource = table`
 
 When a window other than the main window closes the program keeps running.

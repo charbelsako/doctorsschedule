@@ -19,12 +19,24 @@ namespace sample_app
 
         private void Student_Homepage_Load(object sender, EventArgs e)
         {
-
+            label1.Text = "Welcome, " + userdata.username;
         }
 
         private void Student_Homepage_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            Form1 logout = new Form1();
+            logout.Show();
         }
     }
 }
