@@ -32,7 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.courses = new System.Windows.Forms.DataGridView();
+            this.logout = new System.Windows.Forms.Button();
+            this.absences = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.courses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.absences)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +64,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.label3.Location = new System.Drawing.Point(276, 92);
+            this.label3.Location = new System.Drawing.Point(322, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 31);
             this.label3.TabIndex = 2;
@@ -74,24 +77,45 @@
             this.courses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courses.Location = new System.Drawing.Point(12, 126);
             this.courses.Name = "courses";
-            this.courses.Size = new System.Drawing.Size(230, 150);
+            this.courses.Size = new System.Drawing.Size(285, 150);
             this.courses.TabIndex = 3;
             this.courses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courses_CellContentClick);
             // 
-            // Homepage
+            // logout
+            // 
+            this.logout.Location = new System.Drawing.Point(665, 9);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(104, 36);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // absences
+            // 
+            this.absences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.absences.Location = new System.Drawing.Point(330, 127);
+            this.absences.Name = "absences";
+            this.absences.Size = new System.Drawing.Size(284, 148);
+            this.absences.TabIndex = 5;
+            // 
+            // Teacher_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 364);
+            this.Controls.Add(this.absences);
+            this.Controls.Add(this.logout);
             this.Controls.Add(this.courses);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Homepage";
+            this.Name = "Teacher_Homepage";
             this.Text = "Homepage";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Homepage_FormClosed);
             this.Load += new System.EventHandler(this.Homepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.courses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.absences)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +127,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView courses;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.DataGridView absences;
     }
 }

@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using MySql.Data;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
 
 namespace sample_app
 {
@@ -75,10 +74,13 @@ namespace sample_app
                         user_type = reader.GetChar(2);
                         // can i add a global class to save these. userdata.cs
                         userdata.username = fname + " " + lname;
+                        userdata.first_name = fname;
+                        userdata.last_name = lname;
                     }
-
+                    userdata.f = this; 
                     this.Hide();
-
+                    this.username.Text = "";
+                    this.password.Text = "";
                     switch (user_type)
                     {
                         case 'a':
@@ -139,5 +141,7 @@ namespace sample_app
             // validate if password has required length and contains 
             // at least 1 number and 1 uppercase letter and doesn't contain harmful characters.
         }
+
+        
     }
 }

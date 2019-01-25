@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+
 
 namespace sample_app
 {
@@ -31,13 +31,13 @@ namespace sample_app
             // Database db = new Database();
             // MySqlConnection conn = db.connect();
             // DataTable data = db.getData("SELECT * FROM users");
-            string sql = "SELECT first_name, last_name FROM users";
+            string MySql = "SELECT code, title FROM course_by_instructor cbi JOIN courses c ON cbi.course_id = c.id JOIN users u ON cbi.user_id = u.id WHERE u.first_name = \'"+userdata.first_name+"\' AND u.last_name = \'"+userdata.last_name+"\' ";
             DataSet Ds = new DataSet();
           
             try
             {
                 cnn.Open();
-                adapter = new MySqlDataAdapter(sql, cnn);
+                adapter = new MySqlDataAdapter(MySql, cnn);
                 adapter.Fill(Ds, "courses");
                 DataTable data = Ds.Tables["courses"];
                 // Fills the data grid view with the data
@@ -46,6 +46,7 @@ namespace sample_app
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Connection Couldn't be opened. Oh well");
             }
             // get the data for the user
@@ -77,6 +78,12 @@ namespace sample_app
 
             // Closes the application when another window is closed.
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            userdata.f.Show();
         }
     }
 }

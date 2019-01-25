@@ -10,10 +10,11 @@ namespace sample_app
     {
         // This class is intended to let all windows get access to the user's data.
         public static string username;
-       // public static string fname;
-       // public static string lname;
-       // public static string password;
-       // public static string user_type;
+        public static Form1 f;
+        public static string first_name;
+        public static string last_name;
+        // public static string password;
+        // public static string user_type;
 
     }
 }

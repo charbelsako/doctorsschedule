@@ -1,5 +1,6 @@
-GETS THE ROOM CODE OF A GIVEN COURSE:
-	SELECT code, title, number FROM `courses` JOIN rooms ON courses.room_id = rooms.id
+GETS THE ROOM CODE OF ALL GIVEN COURSES:
+	SELECT code, title, number FROM courses c
+	JOIN rooms r ON c.room_id = r.id
 
 GETS ALL THE INSTRUCTORS AND WHAT COURSES DO THEY TEACH
 	SELECT code, title, first_name, last_name FROM course_by_instructor cbi 
@@ -10,4 +11,27 @@ GET THE COURSES THAT A SINGLE INSTRUCTOR IS TEACHING
 	SELECT code, title, first_name, last_name FROM course_by_instructor cbi 
 	JOIN courses c ON cbi.course_id = c.id
 	JOIN users u ON cbi.user_id = u.id
+	WHERE u.first_name = 'Michel' AND u.last_name = 'Nabaa'
+
+GETS ALL THE COURSES AND WHO IS TEACHING THEM AT WHAT TIME AND IN WHAT ROOM
+	SELECT code, title, first_name, last_name, start_date, end_date, number, day FROM course_by_instructor cbi 
+	JOIN courses c ON cbi.course_id = c.id
+	JOIN users u ON cbi.user_id = u.id
+	JOIN time t ON c.time_id = t.id
+	JOIN rooms r ON c.room_id = r.id
+	JOIN days d ON c.day_id = d.id
+
+GETS THE COURSES OF A SINGLE STUDENT
+	SELECT first_name, code, title, start_date, end_date, day FROM student_by_course sby 
+	JOIN users u ON u.id = sby.student_id
+	JOIN courses c ON c.id = sby.course_id
+	JOIN time t ON t.id = c.time_id
+	JOIN days d ON d.id = c.day_id
+
+DELETE A COURSE
+	DELETE FROM courses WHERE courses.id = 3
+	DELETE FROM courses WHERE courses.title = 'Programming 1'
+
+GET THE ABSENCES OF A GIVEN DOCTOR
+	SELECT first_name, last_name, date FROM professor_absence pa JOIN users u ON pa.professor_id = u.id
 	WHERE u.first_name = 'Michel' AND u.last_name = 'Nabaa'
