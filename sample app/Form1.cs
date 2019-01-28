@@ -126,7 +126,7 @@ namespace sample_app
             // removes numbers and special characters
             // Regex rx = new Regex("[^a-z0-9]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
             string input = password.Text;
-            string pattern = @"[*`=()&% ]";
+            string pattern = "[*`=()&% ]";
             MatchCollection matches = Regex.Matches(input, pattern);
             if (matches.Count > 0)
             {

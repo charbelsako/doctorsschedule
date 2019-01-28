@@ -8,7 +8,10 @@ namespace sample_app
 {
     class userdata
     {
-        // This class is intended to let all windows get access to the user's data.
+        /*  This class is intended to let 
+            all windows get access to the 
+            user's data.
+        */
         public static string username;
         public static Form1 f;
         public static string first_name;

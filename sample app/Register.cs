@@ -61,22 +61,11 @@ namespace sample_app
 
 
             }
+
             Database DB = new Database();
-            MySqlConnection conn = DB.connect();
+            DB.connect();
             string query = "INSERT INTO users (first_name, last_name, username, password, type) VALUES (\""+firstname+"\",\""+lastname+"\",\""+username+"\",\""+Pass+"\",\""+user_type+"\")";
-            MessageBox.Show(query);
-            MySqlCommand commandDatabase = new MySqlCommand(query, conn);
-            commandDatabase.CommandTimeout = 60;
-            try
-            {
-                conn.Open();
-                MySqlDataReader reader = commandDatabase.ExecuteReader();
-                MessageBox.Show("Added new user");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            DB.insert(query);
         }
 
         private void back_btn_Click(object sender, EventArgs e)

@@ -14,17 +14,14 @@ namespace sample_app
 {
     class Database
     {
-        private string connectionString = "server=localhost;database=doctorsschedule;uid=root;";
+        private readonly string connectionString = "server=localhost;database=doctorsschedule;uid=root;";
         private MySqlConnection connection;
-        public Database()
-        {
+        public Database(){}
 
-        }
-
-        public MySqlConnection connect()
+        public void connect()
         {
             connection = new MySqlConnection(connectionString);
-            return connection;
+            //return connection;
         }
 
         public DataTable getData(string query)
@@ -43,6 +40,24 @@ namespace sample_app
             }
 
             return ds.Tables["data"];
+        }
+
+        public void insert(string query)
+        {
+            MySqlCommand commandDatabase = new MySqlCommand(query, connection)
+            {
+                CommandTimeout = 60
+            };
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+                MessageBox.Show("Added new user");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
