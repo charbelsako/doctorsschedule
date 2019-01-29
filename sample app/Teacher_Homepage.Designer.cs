@@ -80,6 +80,7 @@
             this.courses.Name = "courses";
             this.courses.Size = new System.Drawing.Size(285, 150);
             this.courses.TabIndex = 3;
+            this.courses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courses_CellClick);
             this.courses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courses_CellContentClick);
             // 
             // logout

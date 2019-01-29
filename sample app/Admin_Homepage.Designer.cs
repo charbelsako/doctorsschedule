@@ -31,13 +31,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logout_btn = new System.Windows.Forms.Button();
+            this.register = new System.Windows.Forms.Button();
+            this.regisiter_professor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(12, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 169);
+            this.button1.Size = new System.Drawing.Size(288, 52);
             this.button1.TabIndex = 0;
             this.button1.Text = "register";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,11 +67,34 @@
             this.logout_btn.UseVisualStyleBackColor = true;
             this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
+            // register
+            // 
+            this.register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.register.Location = new System.Drawing.Point(12, 187);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(288, 52);
+            this.register.TabIndex = 4;
+            this.register.Text = "register a student to a course";
+            this.register.UseVisualStyleBackColor = true;
+            this.register.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // regisiter_professor
+            // 
+            this.regisiter_professor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regisiter_professor.Location = new System.Drawing.Point(12, 246);
+            this.regisiter_professor.Name = "regisiter_professor";
+            this.regisiter_professor.Size = new System.Drawing.Size(288, 52);
+            this.regisiter_professor.TabIndex = 5;
+            this.regisiter_professor.Text = "register a professor to a course";
+            this.regisiter_professor.UseVisualStyleBackColor = true;
+            // 
             // Admin_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 310);
+            this.Controls.Add(this.regisiter_professor);
+            this.Controls.Add(this.register);
             this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -86,5 +112,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button logout_btn;
+        private System.Windows.Forms.Button register;
+        private System.Windows.Forms.Button regisiter_professor;
     }
 }

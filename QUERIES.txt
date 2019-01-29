@@ -27,11 +27,21 @@ GETS THE COURSES OF A SINGLE STUDENT
 	JOIN courses c ON c.id = sby.course_id
 	JOIN time t ON t.id = c.time_id
 	JOIN days d ON d.id = c.day_id
+	WHERE sby.student_id = 1
 
-DELETE A COURSE
-	DELETE FROM courses WHERE courses.id = 3
-	DELETE FROM courses WHERE courses.title = 'Programming 1'
+GET ALL THE COURSES THAT THOSE STUDENTS TAKE AND STORE THE START DATE AND THE DAY IN A LIST
+	SELECT day ,start_date FROM student_by_course sby 
+	JOIN courses c ON c.id = sby.course_id 
+	JOIN rooms r ON r.id = c.room_id 
+	JOIN days d ON d.id = c.day_id 
+	JOIN users u ON u.id = sby.student_id 
+	JOIN time t ON t.id = c.time_id WHERE u.type = 'a' AND sby.student_id IN (SELECT student_id 
+	FROM student_by_course JOIN users u ON u.id = student_id WHERE course_id = "+Course_id+" AND u.type = 'a')"
 
 GET THE ABSENCES OF A GIVEN DOCTOR
 	SELECT first_name, last_name, date FROM professor_absence pa JOIN users u ON pa.professor_id = u.id
 	WHERE u.first_name = 'Michel' AND u.last_name = 'Nabaa'
+
+DELETE A COURSE
+	DELETE FROM courses WHERE courses.id = 3
+	DELETE FROM courses WHERE courses.title = 'Programming 1'
