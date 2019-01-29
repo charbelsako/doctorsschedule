@@ -30,7 +30,8 @@ namespace sample_app
             MySqlDataAdapter adapter;
             try
             {
-                connection.Open();
+                if(connection.State.ToString() != "Open")
+                    connection.Open();
                 adapter = new MySqlDataAdapter(query, connection);
                 adapter.Fill(ds, "data");
             }

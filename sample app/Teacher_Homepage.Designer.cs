@@ -34,6 +34,7 @@
             this.courses = new System.Windows.Forms.DataGridView();
             this.logout = new System.Windows.Forms.Button();
             this.absences = new System.Windows.Forms.DataGridView();
+            this.makeup_session = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.courses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.absences)).BeginInit();
             this.SuspendLayout();
@@ -99,11 +100,22 @@
             this.absences.Size = new System.Drawing.Size(284, 148);
             this.absences.TabIndex = 5;
             // 
+            // makeup_session
+            // 
+            this.makeup_session.Location = new System.Drawing.Point(14, 302);
+            this.makeup_session.Name = "makeup_session";
+            this.makeup_session.Size = new System.Drawing.Size(143, 36);
+            this.makeup_session.TabIndex = 6;
+            this.makeup_session.Text = "Request Make up session";
+            this.makeup_session.UseVisualStyleBackColor = true;
+            this.makeup_session.Click += new System.EventHandler(this.makeup_session_Click);
+            // 
             // Teacher_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 364);
+            this.Controls.Add(this.makeup_session);
             this.Controls.Add(this.absences);
             this.Controls.Add(this.logout);
             this.Controls.Add(this.courses);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.DataGridView courses;
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.DataGridView absences;
+        private System.Windows.Forms.Button makeup_session;
     }
 }

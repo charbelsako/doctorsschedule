@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 34);
+            this.label1.Location = new System.Drawing.Point(43, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 37);
             this.label1.TabIndex = 1;
@@ -75,6 +75,7 @@
             this.Name = "Admin_Homepage";
             this.Text = "Admin_Homepage";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_Homepage_FormClosed);
+            this.Load += new System.EventHandler(this.Admin_Homepage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

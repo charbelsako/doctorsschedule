@@ -26,7 +26,7 @@ namespace sample_app
 
             string conn = "server=localhost;database=doctorsschedule;uid=root;";
             MySqlConnection cnn = new MySqlConnection(conn);
-            string MySql = "SELECT code, title, start_date, end_date, day FROM student_by_course sby JOIN users u ON u.id = sby.student_id JOIN courses c ON c.id = sby.course_id JOIN time t ON t.id = c.time_id JOIN days d ON d.id = c.day_id";
+            string MySql = "SELECT code, title, start_date, end_date, day FROM student_by_course sby JOIN users u ON u.id = sby.student_id JOIN courses c ON c.id = sby.course_id JOIN time t ON t.id = c.time_id JOIN days d ON d.id = c.day_id WHERE u.first_name = \'"+userdata.first_name+"\' AND u.last_name = \'"+userdata.last_name+"\'";
             DataSet Ds = new DataSet();
 
             try

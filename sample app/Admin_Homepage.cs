@@ -25,7 +25,7 @@ namespace sample_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            //Close();
             Register reg = new Register();
             reg.Show();
 
@@ -39,8 +39,12 @@ namespace sample_app
         private void logout_btn_Click(object sender, EventArgs e)
         {
             Close();
-            Form1 logout = new Form1();
-            logout.Show();
+            userdata.f.Show();
+        }
+
+        private void Admin_Homepage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
