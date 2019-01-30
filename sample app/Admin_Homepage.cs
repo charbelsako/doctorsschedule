@@ -20,7 +20,7 @@ namespace sample_app
 
         private void Admin_Homepage_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +49,14 @@ namespace sample_app
 
         private void button2_Click(object sender, EventArgs e)
         {
+            registerstudent form = new registerstudent();
+            form.Show();
+        }
 
+        private void regisiter_professor_Click(object sender, EventArgs e)
+        {
+            registerprofessor form = new registerprofessor();
+            form.Show();
         }
     }
 }

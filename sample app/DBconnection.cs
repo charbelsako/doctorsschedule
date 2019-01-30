@@ -30,7 +30,7 @@ namespace sample_app
             MySqlDataAdapter adapter;
             try
             {
-                if(connection.State.ToString() != "Open")
+                if (connection.State.ToString() != "Open")
                     connection.Open();
                 adapter = new MySqlDataAdapter(query, connection);
                 adapter.Fill(ds, "data");
@@ -51,9 +51,10 @@ namespace sample_app
             };
             try
             {
-                connection.Open();
+                if (connection.State.ToString() != "Open")
+                    connection.Open();
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
-                MessageBox.Show("Added new user");
+                MessageBox.Show("Success!");
             }
             catch (Exception ex)
             {

@@ -81,6 +81,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="registerprofessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registerprofessor.Designer.cs">
+      <DependentUpon>registerprofessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="registerstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registerstudent.Designer.cs">
+      <DependentUpon>registerstudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="userdata.cs" />
     <Compile Include="Student_Homepage.cs">
       <SubType>Form</SubType>
@@ -102,11 +114,18 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="Admin_Homepage.resx">
       <DependentUpon>Admin_Homepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registerprofessor.resx">
+      <DependentUpon>registerprofessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registerstudent.resx">
+      <DependentUpon>registerstudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student_Homepage.resx">
       <DependentUpon>Student_Homepage.cs</DependentUpon>

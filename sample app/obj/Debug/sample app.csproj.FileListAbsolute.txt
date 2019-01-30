@@ -36,3 +36,5 @@ C:\Users\charb\Documents\univeristy\programming 2\FINAL PROJECT\doctorsschedule\
 C:\Users\charb\Documents\univeristy\programming 2\FINAL PROJECT\doctorsschedule\sample app\bin\Debug\MySql.Data.dll
 C:\Users\charb\Documents\univeristy\programming 2\FINAL PROJECT\doctorsschedule\sample app\bin\Debug\Google.Protobuf.dll
 C:\Users\charb\Documents\univeristy\programming 2\FINAL PROJECT\doctorsschedule\sample app\bin\Debug\MySql.Data.xml
+C:\Users\charb\Documents\univeristy\programming 2\FINAL PROJECT\doctorsschedule\sample app\obj\Debug\sample_app.registerprofessor.resources
+C:\Users\charb\Documents\univeristy\programming 2\FINAL PROJECT\doctorsschedule\sample app\obj\Debug\sample_app.registerstudent.resources
