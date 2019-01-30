@@ -1,4 +1,19 @@
-# Readme bitches
+# Project Requirements
+
+> Download latest versions.
+
+1. XAMPP [Download Xampp](https://apachefriends.org/download.html)
+2. Mysql Connector [Download Connector](https://dev.mysql.com/downloads/connector/)
+3. .NET Framework version 4.7.2
+
+Steps to run project
+- install the mysql connector should be version 8.x 
+- run mysql and start apache and mysql
+- open the project in visual studio
+- start project
+- if project doesn't connect to the data base
+- add a reference to mysql.data from the references 
+- Rerun project
 
 ## Visual Studio Problems
 
